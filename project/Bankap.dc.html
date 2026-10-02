@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#3a2b35;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#7b4fa3}a:hover{color:#5c3482}*{box-sizing:border-box}input{font-family:inherit}::-webkit-scrollbar{width:0;height:0}button{font-family:inherit}</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:20px;padding:28px 16px 40px;background:radial-gradient(1200px 700px at 50% -10%, #5a4152 0%, #3a2b35 55%, #2c2028 100%)">
+  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center">
+    <div style="font-size:22px;font-weight:700;letter-spacing:-0.03em;color:#fff">bankap</div>
+    <div style="display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.1)">
+      <button onClick="{{ toClienta }}" style="border:0;cursor:pointer;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;background:{{ swC.bg }};color:{{ swC.color }}">Clienta · web</button>
+      <button onClick="{{ toPrestadora }}" style="border:0;cursor:pointer;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;background:{{ swP.bg }};color:{{ swP.color }};display:flex;align-items:center;gap:7px">Prestadora · app<sc-if value="{{ hasPendingPush }}"><span style="width:7px;height:7px;border-radius:50%;background:#e8789a"></span></sc-if></button>
+    </div>
+  </div>
+
+  <div style="padding:10px;border-radius:62px;background:#141015;box-shadow:0 40px 80px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06) inset">
+  <div style="position:relative;width:390px;height:844px;border-radius:52px;overflow:hidden;color:#1d1a21;background:radial-gradient(420px 360px at 85% 8%, rgba(251,226,214,.9), transparent 70%),radial-gradient(400px 400px at 0% 40%, rgba(232,220,246,.95), transparent 70%),linear-gradient(170deg,#f1e9f6 0%,#f8eff2 50%,#fbefe8 100%)">
+
+    <div style="position:absolute;top:0;left:0;right:0;height:50px;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:4px 30px 0 40px;pointer-events:none">
+      <div style="font-size:16px;font-weight:600;letter-spacing:-0.01em">9:41</div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="display:flex;align-items:flex-end;gap:2px;height:12px"><div style="width:3px;height:4px;border-radius:1px;background:#1d1a21"></div><div style="width:3px;height:6px;border-radius:1px;background:#1d1a21"></div><div style="width:3px;height:9px;border-radius:1px;background:#1d1a21"></div><div style="width:3px;height:12px;border-radius:1px;background:#1d1a21"></div></div>
+        <div style="width:25px;height:12px;border-radius:4px;border:1.5px solid rgba(29,26,33,.4);padding:1.5px"><div style="width:80%;height:100%;border-radius:1.5px;background:#1d1a21"></div></div>
+      </div>
+    </div>
+    <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:122px;height:35px;border-radius:20px;background:#000;z-index:31"></div>
+
+    <!-- ===================== CLIENTA ===================== -->
+    <sc-if value="{{ isClienta }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;top:52px;left:0;right:0;display:flex;justify-content:center;z-index:20">
+        <div style="display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.6);font-size:12px;color:#6f6574"><div style="width:7px;height:9px;border-radius:2px;border:1.5px solid #8b8190"></div>bankap.app/daniela</div>
+      </div>
+
+      <!-- Paso 1: servicios -->
+      <sc-if value="{{ stServ }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0;overflow-y:auto;padding:96px 20px 130px">
+          <div style="display:grid;grid-template-columns:1fr 168px;gap:14px;align-items:end">
+            <div style="display:flex;flex-direction:column;gap:10px;padding-bottom:6px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="font-size:26px;font-weight:600;letter-spacing:-0.03em;line-height:1.05">Daniela Ríos</div>
+                <div style="font-size:14px;color:#8b8190">Cejas, pestañas y uñas</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#5f5664">
+                <div style="display:flex;align-items:center;gap:7px"><div style="width:6px;height:6px;border-radius:50%;background:#b893cf"></div>Palermo, CABA</div>
+                <div style="display:flex;align-items:center;gap:7px"><div style="width:6px;height:6px;border-radius:50%;background:#e9a98f"></div>Lun a vie 9–19 · Sáb 9–14</div>
+              </div>
+            </div>
+            <div style="height:212px;border-radius:28px;background:repeating-linear-gradient(135deg, rgba(123,79,163,.10) 0 8px, rgba(123,79,163,.04) 8px 16px);border:1px solid rgba(255,255,255,.8);display:flex;align-items:flex-end;justify-content:center;padding:14px;font-family:'DM Mono',monospace;font-size:10.5px;color:#8b8190;text-align:center">foto de perfil</div>
+          </div>
+
+          <div style="margin-top:26px;font-size:16px;font-weight:600;letter-spacing:-0.01em">Elegí un servicio</div>
+          <div style="display:flex;gap:8px;overflow-x:auto;margin:12px -20px 0;padding:0 20px">
+            <sc-for list="{{ cats }}" as="c" hint-placeholder-count="5">
+              <button onClick="{{ c.onClick }}" style="flex:none;border:1px solid rgba(255,255,255,.9);cursor:pointer;padding:11px 18px;border-radius:999px;font-size:14px;background:{{ c.bg }};color:{{ c.color }}">{{ c.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+            <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+              <div onClick="{{ s.onClick }}" style="cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;gap:12px;align-items:center;padding:15px 16px;border-radius:22px;background:{{ s.bg }};border:1px solid {{ s.border }};transition:background .2s">
+                <div style="width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ s.dotBg }};color:#7b4fa3">
+                  <sc-if value="{{ s.selected }}"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                  <div style="font-size:15px;font-weight:500">{{ s.name }}</div>
+                  <div style="font-size:12.5px;color:#8b8190;text-wrap:pretty">{{ s.dur }} · {{ s.desc }}</div>
+                </div>
+                <div style="font-size:15px;font-weight:600;white-space:nowrap">{{ s.price }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:28px 20px 34px;background:linear-gradient(to top, rgba(251,239,232,1) 55%, rgba(251,239,232,0));z-index:10">
+          <button onClick="{{ goHorario }}" style="width:100%;height:56px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:16px;font-weight:500;cursor:pointer;opacity:{{ servBtnOpacity }}">Elegir horario</button>
+        </div>
+      </sc-if>
+
+      <!-- Paso 2: horario -->
+      <sc-if value="{{ stHora }}">
+        <div style="position:absolute;inset:0;overflow-y:auto;padding:94px 20px 130px">
+          <div style="display:grid;grid-template-columns:44px 1fr 44px;align-items:center">
+            <button onClick="{{ backToServ }}" style="width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#1d1a21"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></button>
+            <div style="text-align:center;font-size:16px;font-weight:500">Fecha y hora</div>
+            <div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px">
+            <div style="display:flex;flex-direction:column;gap:2px">
+              <div style="font-size:34px;font-weight:500;letter-spacing:-0.035em">Octubre</div>
+              <div style="font-size:13px;color:#8b8190">{{ svLine }}</div>
+            </div>
+            <div style="display:flex;gap:3px;padding:3px;border-radius:999px;background:rgba(255,255,255,.6)">
+              <button onClick="{{ cWeek }}" style="border:0;cursor:pointer;padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:500;background:{{ cvW.bg }};color:{{ cvW.color }}">7 días</button>
+              <button onClick="{{ cMonth }}" style="border:0;cursor:pointer;padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:500;background:{{ cvM.bg }};color:{{ cvM.color }}">Mes</button>
+            </div>
+          </div>
+
+          <sc-if value="{{ cIsWeek }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:16px">
+              <sc-for list="{{ cWeekDays }}" as="d" hint-placeholder-count="7">
+                <button onClick="{{ d.onClick }}" style="border:0;cursor:pointer;padding:10px 0;border-radius:999px;display:flex;flex-direction:column;align-items:center;gap:3px;background:{{ d.bg }};color:{{ d.color }}">
+                  <span style="font-size:12px;color:{{ d.sub }}">{{ d.dow }}</span><span style="font-size:17px;font-weight:500">{{ d.num }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ cIsMonth }}">
+            <div style="margin-top:14px;padding:14px 12px;border-radius:22px;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.9)">
+              <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px;font-size:11px;color:#8b8190;text-align:center;margin-bottom:6px"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div>
+              <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:2px">
+                <sc-for list="{{ monthCells }}" as="m" hint-placeholder-count="35">
+                  <button onClick="{{ m.onClick }}" style="border:0;cursor:pointer;height:40px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:14px;background:{{ m.bg }};color:{{ m.color }};visibility:{{ m.vis }}">{{ m.num }}<span style="width:4px;height:4px;border-radius:50%;background:{{ m.dot }}"></span></button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:#6f6574">
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;border-radius:4px;background:#fff;border:1px solid rgba(29,26,33,.1)"></div>Libre</div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;border-radius:4px;background:linear-gradient(120deg,#e9d6f4,#f8dbe5,#fbe4d6);border:1px solid #e3bfd8"></div>Elegido</div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;border-radius:4px;background:repeating-linear-gradient(135deg, rgba(29,26,33,.18) 0 1.5px, transparent 1.5px 4px)"></div>Ocupado</div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;border-radius:4px;border:1px solid rgba(29,26,33,.12)"></div>Pasado</div>
+          </div>
+
+          <div style="margin-top:6px;font-size:13px;color:#8b8190">{{ cDayLabel }}</div>
+          <sc-if value="{{ cNoSlots }}">
+            <div style="margin-top:14px;padding:22px;border-radius:22px;background:rgba(255,255,255,.55);text-align:center;font-size:14px;color:#6f6574;text-wrap:pretty">{{ cNoSlotsMsg }}</div>
+          </sc-if>
+          <sc-for list="{{ slotGroups }}" as="g" hint-placeholder-count="2">
+            <div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">
+              <div style="font-size:14px;color:#8b8190">{{ g.title }}</div>
+              <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+                <sc-for list="{{ g.slots }}" as="t" hint-placeholder-count="8">
+                  <button onClick="{{ t.onClick }}" style="height:46px;border-radius:999px;font-size:15px;cursor:{{ t.cursor }};background:{{ t.bg }};color:{{ t.color }};border:1px solid {{ t.border }};text-decoration:{{ t.deco }};font-weight:{{ t.weight }}">{{ t.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:28px 20px 34px;background:linear-gradient(to top, rgba(251,239,232,1) 55%, rgba(251,239,232,0));z-index:10">
+          <button onClick="{{ goDatos }}" style="width:100%;height:56px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:16px;font-weight:500;cursor:pointer;opacity:{{ horaBtnOpacity }}">Continuar</button>
+        </div>
+      </sc-if>
+
+      <!-- Paso 3: datos -->
+      <sc-if value="{{ stDatos }}">
+        <div style="position:absolute;inset:0;overflow-y:auto;padding:94px 20px 130px">
+          <div style="display:grid;grid-template-columns:44px 1fr 44px;align-items:center">
+            <button onClick="{{ backToHora }}" style="width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#1d1a21"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M19 12H5M11 18l-6-6 6-6"></path></svg></button>
+            <div style="text-align:center;font-size:16px;font-weight:500">Revisá y confirmá</div>
+            <div></div>
+          </div>
+          <div style="margin-top:18px;padding:16px;border-radius:22px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:46px;height:46px;border-radius:50%;flex:none;background:repeating-linear-gradient(135deg, rgba(123,79,163,.14) 0 5px, rgba(123,79,163,.05) 5px 10px);border:2px solid #fff"></div>
+              <div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:15px;font-weight:500">Daniela Ríos</div><div style="font-size:13px;color:#8b8190">Cejas, pestañas y uñas</div></div>
+            </div>
+            <div style="height:1px;background:rgba(29,26,33,.07)"></div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start">
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:15px;font-weight:500">{{ sum.service }}</div><div style="font-size:13px;color:#8b8190">{{ sum.dur }}</div></div>
+              <div style="font-size:15px;font-weight:600">{{ sum.price }}</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Fecha</div><div style="font-size:14px;font-weight:500">{{ sum.date }}</div></div>
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Hora</div><div style="font-size:14px;font-weight:500">{{ sum.time }}</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Dirección</div><div style="font-size:14px;font-weight:500">Gorriti 4820, Palermo</div></div>
+          </div>
+
+          <div style="margin-top:22px;font-size:16px;font-weight:600">Tus datos</div>
+          <div style="margin-top:4px;font-size:13px;color:#8b8190;text-wrap:pretty">No necesitás cuenta. Te mandamos la confirmación por email.</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+            <label style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:13px;color:#5f5664">Nombre y apellido</span>
+              <input value="{{ form.name }}" onChange="{{ onName }}" placeholder="Sofía Martínez" style="height:52px;border-radius:16px;padding:0 16px;font-size:15px;color:#1d1a21;outline:none;background:rgba(255,255,255,.8);border:1px solid {{ errB.name }}">
+              <sc-if value="{{ errors.name }}"><span style="font-size:12px;color:#b2365c">{{ errors.name }}</span></sc-if>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:13px;color:#5f5664">Celular</span>
+              <input value="{{ form.phone }}" onChange="{{ onPhone }}" inputMode="tel" placeholder="11 2345 6789" style="height:52px;border-radius:16px;padding:0 16px;font-size:15px;color:#1d1a21;outline:none;background:rgba(255,255,255,.8);border:1px solid {{ errB.phone }}">
+              <sc-if value="{{ errors.phone }}"><span style="font-size:12px;color:#b2365c">{{ errors.phone }}</span></sc-if>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px">
+              <span style="font-size:13px;color:#5f5664">Email</span>
+              <input value="{{ form.email }}" onChange="{{ onEmail }}" type="email" placeholder="sofia@gmail.com" style="height:52px;border-radius:16px;padding:0 16px;font-size:15px;color:#1d1a21;outline:none;background:rgba(255,255,255,.8);border:1px solid {{ errB.email }}">
+              <sc-if value="{{ errors.email }}"><span style="font-size:12px;color:#b2365c">{{ errors.email }}</span></sc-if>
+            </label>
+          </div>
+          <div style="margin-top:16px;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.45);display:grid;grid-template-columns:1fr auto;gap:4px 12px;font-size:13px">
+            <span style="color:#5f5664">Pagás en el local</span><span style="font-weight:600">{{ sum.price }}</span>
+            <span style="color:#8b8190;grid-column:1 / -1">Podés cancelar o reprogramar hasta 24 h antes.</span>
+          </div>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:28px 20px 34px;background:linear-gradient(to top, rgba(251,239,232,1) 55%, rgba(251,239,232,0));z-index:10">
+          <button onClick="{{ confirm }}" style="width:100%;height:56px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:16px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px">{{ confirmLabel }}</button>
+        </div>
+        <sc-if value="{{ conflict }}">
+          <div style="position:absolute;inset:0;z-index:40;background:rgba(29,20,30,.35);display:flex;align-items:flex-end">
+            <div style="width:100%;padding:12px 22px 36px;border-radius:32px 32px 0 0;background:#fbf8fb;display:flex;flex-direction:column;gap:14px">
+              <div style="align-self:center;width:38px;height:5px;border-radius:3px;background:rgba(29,26,33,.15)"></div>
+              <div style="width:52px;height:52px;border-radius:50%;background:repeating-linear-gradient(135deg, rgba(29,26,33,.16) 0 2px, rgba(29,26,33,.04) 2px 7px);margin-top:6px"></div>
+              <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em">Ese horario se acaba de ocupar</div>
+              <div style="font-size:14.5px;line-height:1.45;color:#5f5664;text-wrap:pretty">{{ conflictMsg }}</div>
+              <button onClick="{{ resolveConflict }}" style="margin-top:6px;width:100%;height:56px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:16px;font-weight:500;cursor:pointer">Ver horarios actualizados</button>
+            </div>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <!-- Paso 4: confirmado -->
+      <sc-if value="{{ stListo }}">
+        <div style="position:absolute;inset:0;overflow-y:auto;padding:110px 20px 130px">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+            <div style="width:76px;height:76px;border-radius:50%;background:linear-gradient(120deg,#e9d6f4,#f8dbe5,#fbe4d6);border:1px solid #e3bfd8;display:flex;align-items:center;justify-content:center;color:#7b4fa3"><svg width="34" height="34" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+            <div style="font-size:28px;font-weight:600;letter-spacing:-0.03em;line-height:1.1">¡Listo, {{ done.first }}!<br>Tu turno está confirmado</div>
+            <div style="font-size:14px;color:#6f6574;max-width:300px;text-wrap:pretty">Te enviamos un email a <span style="color:#1d1a21;font-weight:500">{{ done.email }}</span> con el link para cancelar o reprogramar.</div>
+          </div>
+          <div style="margin-top:22px;padding:16px;border-radius:22px;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);display:flex;flex-direction:column;gap:12px">
+            <div style="display:grid;grid-template-columns:1fr auto;gap:10px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:15px;font-weight:500">{{ done.service }}</div><div style="font-size:13px;color:#8b8190">con Daniela Ríos</div></div><div style="font-size:15px;font-weight:600">{{ done.price }}</div></div>
+            <div style="height:1px;background:rgba(29,26,33,.07)"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Fecha</div><div style="font-size:14px;font-weight:500">{{ done.date }}</div></div>
+              <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Hora</div><div style="font-size:14px;font-weight:500">{{ done.time }}</div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Dirección</div><div style="font-size:14px;font-weight:500">Gorriti 4820, Palermo</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+            <button onClick="{{ addCal }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px;border-radius:20px;border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.7);font-size:15px;color:#1d1a21;text-align:left">
+              <div style="width:20px;height:20px;border-radius:5px;border:1.8px solid #1d1a21;border-top-width:4px"></div><span style="flex:1">Agregar a mi calendario</span><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:#8b8190;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+            <button onClick="{{ waClient }}" style="cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px;border-radius:20px;border:1px solid rgba(255,255,255,.9);background:rgba(255,255,255,.7);font-size:15px;color:#1d1a21;text-align:left">
+              <div style="width:20px;height:20px;border-radius:50%;border:1.8px solid #1d1a21;display:flex;align-items:center;justify-content:center"><div style="width:6px;height:6px;border-radius:50%;background:#3aa86b"></div></div><span style="flex:1">Avisale por WhatsApp</span><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:#8b8190;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 6l6 6-6 6"></path></svg>
+            </button>
+          </div>
+          <button onClick="{{ toPrestadora }}" style="margin:18px auto 0;display:block;border:0;background:none;cursor:pointer;font-size:13px;color:#7b4fa3;text-decoration:underline;text-underline-offset:3px">Ver cómo le llega a Daniela →</button>
+        </div>
+        <div style="position:absolute;left:0;right:0;bottom:0;padding:28px 20px 34px;background:linear-gradient(to top, rgba(251,239,232,1) 55%, rgba(251,239,232,0));z-index:10">
+          <button onClick="{{ restart }}" style="width:100%;height:56px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:16px;font-weight:500;cursor:pointer">Volver al inicio</button>
+        </div>
+      </sc-if>
+    </sc-if>
+
+    <!-- ===================== PRESTADORA ===================== -->
+    <sc-if value="{{ isPrestadora }}">
+      <div style="position:absolute;inset:0;overflow-y:auto;padding:62px 20px 120px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="font-size:13px;color:#8b8190">Hola, Daniela</div>
+            <div style="font-size:30px;font-weight:500;letter-spacing:-0.035em;line-height:1.1">{{ pTitle }}</div>
+            <div style="font-size:13px;color:#8b8190">{{ pSub }}</div>
+          </div>
+          <div style="width:46px;height:46px;border-radius:50%;background:repeating-linear-gradient(135deg, rgba(123,79,163,.14) 0 5px, rgba(123,79,163,.05) 5px 10px);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#6f6574">DR</div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;gap:10px">
+          <div style="display:flex;gap:3px;padding:3px;border-radius:999px;background:rgba(255,255,255,.6)">
+            <button onClick="{{ pDay }}" style="border:0;cursor:pointer;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;background:{{ pvD.bg }};color:{{ pvD.color }}">Día</button>
+            <button onClick="{{ pWeekView }}" style="border:0;cursor:pointer;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;background:{{ pvW.bg }};color:{{ pvW.color }}">Semana</button>
+          </div>
+          <div style="display:flex;gap:6px">
+            <button onClick="{{ goToday }}" style="border:0;cursor:pointer;height:36px;padding:0 14px;border-radius:999px;font-size:13px;background:rgba(255,255,255,.7);color:#1d1a21">Hoy</button>
+            <button onClick="{{ prevWeek }}" style="border:0;cursor:pointer;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;color:#1d1a21"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+            <button onClick="{{ nextWeek }}" style="border:0;cursor:pointer;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;color:#1d1a21"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M9 6l6 6-6 6"></path></svg></button>
+          </div>
+        </div>
+
+        <sc-if value="{{ pIsDay }}" hint-placeholder-val="{{ true }}">
+          <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;margin-top:14px">
+            <sc-for list="{{ pStrip }}" as="d" hint-placeholder-count="7">
+              <button onClick="{{ d.onClick }}" style="border:0;cursor:pointer;padding:9px 0 8px;border-radius:999px;display:flex;flex-direction:column;align-items:center;gap:2px;background:{{ d.bg }};color:{{ d.color }}">
+                <span style="font-size:11.5px;color:{{ d.sub }}">{{ d.dow }}</span><span style="font-size:17px;font-weight:500">{{ d.num }}</span><span style="font-size:10px;height:12px;color:{{ d.sub }}">{{ d.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="margin-top:16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#6f6574"><span>{{ daySummary }}</span><span style="color:#8b8190">{{ dayHours }}</span></div>
+          <sc-if value="{{ pClosed }}">
+            <div style="margin-top:12px;padding:28px 20px;border-radius:22px;background:rgba(255,255,255,.5);text-align:center;font-size:14px;color:#6f6574">Los domingos no atendés.</div>
+          </sc-if>
+          <sc-if value="{{ pOpen }}">
+            <div style="position:relative;margin-top:12px;height:{{ tlHeight }}">
+              <sc-for list="{{ hourMarks }}" as="h" hint-placeholder-count="10">
+                <div style="position:absolute;left:0;right:0;top:{{ h.top }};display:flex;align-items:center;gap:8px">
+                  <span style="width:40px;font-size:11px;color:#8b8190;font-family:'DM Mono',monospace;transform:translateY(-50%)">{{ h.label }}</span>
+                  <div style="flex:1;height:1px;background:rgba(29,26,33,.07);transform:translateY(-50%)"></div>
+                </div>
+              </sc-for>
+              <sc-for list="{{ dayBlocks }}" as="b" hint-placeholder-count="1">
+                <div style="position:absolute;left:52px;right:0;top:{{ b.top }};height:{{ b.height }};border-radius:16px;background:repeating-linear-gradient(135deg, rgba(29,26,33,.07) 0 1.5px, transparent 1.5px 7px);border:1px dashed rgba(29,26,33,.15);display:flex;align-items:center;padding:0 14px;font-size:12.5px;color:#8b8190">{{ b.label }}</div>
+              </sc-for>
+              <sc-for list="{{ dayItems }}" as="it" hint-placeholder-count="4">
+                <div onClick="{{ it.onClick }}" style="cursor:pointer;position:absolute;left:52px;right:0;top:{{ it.top }};height:{{ it.height }};border-radius:16px;background:{{ it.tint }};border:1px solid rgba(255,255,255,.9);box-shadow:{{ it.ring }};padding:8px 12px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:2px">
+                  <sc-if value="{{ it.compact }}">
+                    <div style="display:flex;gap:8px;align-items:baseline;font-size:13px;white-space:nowrap;overflow:hidden"><span style="font-weight:600">{{ it.start }}</span><span>{{ it.service }}</span><span style="color:#6f6574;overflow:hidden;text-overflow:ellipsis">· {{ it.client }}</span></div>
+                  </sc-if>
+                  <sc-if value="{{ it.full }}">
+                    <div style="font-size:11.5px;color:#6f6574;font-family:'DM Mono',monospace">{{ it.time }}</div>
+                    <div style="font-size:14.5px;font-weight:600">{{ it.service }}</div>
+                    <div style="font-size:13px;color:#5f5664">{{ it.client }}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+              <sc-if value="{{ showNow }}">
+                <div style="position:absolute;left:44px;right:0;top:{{ nowTop }};height:2px;background:#d4577e;border-radius:1px;z-index:3;pointer-events:none"><div style="position:absolute;left:-4px;top:-4px;width:10px;height:10px;border-radius:50%;background:#d4577e"></div></div>
+              </sc-if>
+            </div>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ pIsWeek }}">
+          <div style="display:grid;grid-template-columns:34px repeat(6,minmax(0,1fr));gap:0 3px;margin-top:16px">
+            <div></div>
+            <sc-for list="{{ weekHead }}" as="w" hint-placeholder-count="6">
+              <button onClick="{{ w.onClick }}" style="border:0;cursor:pointer;padding:6px 0;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:1px;background:{{ w.bg }};color:{{ w.color }}"><span style="font-size:11px;opacity:.7">{{ w.dow }}</span><span style="font-size:15px;font-weight:500">{{ w.num }}</span></button>
+            </sc-for>
+          </div>
+          <div style="position:relative;margin-top:10px;height:{{ wkHeight }}">
+            <sc-for list="{{ wkMarks }}" as="h" hint-placeholder-count="10">
+              <div style="position:absolute;left:0;right:0;top:{{ h.top }};display:flex;align-items:center;gap:4px">
+                <span style="width:30px;font-size:10px;color:#8b8190;font-family:'DM Mono',monospace;transform:translateY(-50%)">{{ h.label }}</span>
+                <div style="flex:1;height:1px;background:rgba(29,26,33,.07);transform:translateY(-50%)"></div>
+              </div>
+            </sc-for>
+            <div style="position:absolute;left:37px;right:0;top:0;bottom:0">
+              <sc-for list="{{ wkBlocks }}" as="b" hint-placeholder-count="5">
+                <div style="position:absolute;left:{{ b.left }};width:{{ b.width }};top:{{ b.top }};height:{{ b.height }};border-radius:8px;background:repeating-linear-gradient(135deg, rgba(29,26,33,.08) 0 1.5px, transparent 1.5px 5px)"></div>
+              </sc-for>
+              <sc-for list="{{ wkItems }}" as="it" hint-placeholder-count="12">
+                <div onClick="{{ it.onClick }}" style="cursor:pointer;position:absolute;left:{{ it.left }};width:{{ it.width }};top:{{ it.top }};height:{{ it.height }};border-radius:8px;background:{{ it.tint }};border:1px solid rgba(255,255,255,.9);box-shadow:{{ it.ring }};padding:3px 4px;overflow:hidden;font-size:10px;font-weight:600;font-family:'DM Mono',monospace;color:#3d3542">{{ it.label }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:#6f6574">
+            <sc-for list="{{ catLegend }}" as="l" hint-placeholder-count="4">
+              <div style="display:flex;align-items:center;gap:6px"><div style="width:12px;height:12px;border-radius:4px;background:{{ l.tint }};border:1px solid rgba(29,26,33,.08)"></div>{{ l.label }}</div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="position:absolute;left:0;right:0;bottom:0;height:86px;z-index:12;background:rgba(252,248,250,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(29,26,33,.06);display:grid;grid-template-columns:repeat(4,1fr);padding:10px 8px 0">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+          <button onClick="{{ t.onClick }}" style="border:0;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;font-weight:500;color:{{ t.color }}">
+            <div style="width:22px;height:22px;border-radius:7px;border:1.8px solid currentColor;background:{{ t.fill }}"></div>{{ t.label }}
+          </button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ sheetOpen }}">
+        <div style="position:absolute;inset:0;z-index:40">
+          <div onClick="{{ closeSheet }}" style="position:absolute;inset:0;background:rgba(29,20,30,.32)"></div>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:12px 20px 34px;border-radius:32px 32px 0 0;background:#fbf8fb;display:flex;flex-direction:column;gap:14px;max-height:88%;overflow-y:auto">
+            <div style="align-self:center;width:38px;height:5px;border-radius:3px;background:rgba(29,26,33,.15)"></div>
+            <sc-if value="{{ smDetalle }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:50px;height:50px;border-radius:50%;background:{{ sb.tint }};display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#3d3542">{{ sb.initials }}</div>
+                <div style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">{{ sb.client }}</div><div style="font-size:13px;color:#8b8190">{{ sb.phone }} · {{ sb.email }}</div></div>
+              </div>
+              <div style="padding:16px;border-radius:20px;background:#fff;border:1px solid rgba(29,26,33,.06);display:flex;flex-direction:column;gap:12px">
+                <div style="display:grid;grid-template-columns:1fr auto;gap:8px"><div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:15px;font-weight:500">{{ sb.service }}</div><div style="font-size:13px;color:#8b8190">{{ sb.dur }}</div></div><div style="font-size:15px;font-weight:600">{{ sb.price }}</div></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                  <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Fecha</div><div style="font-size:14px;font-weight:500">{{ sb.date }}</div></div>
+                  <div style="display:flex;flex-direction:column;gap:3px"><div style="font-size:12px;color:#8b8190">Hora</div><div style="font-size:14px;font-weight:500">{{ sb.time }}</div></div>
+                </div>
+              </div>
+              <button onClick="{{ waPro }}" style="width:100%;height:54px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:15.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px"><div style="width:8px;height:8px;border-radius:50%;background:#5fd08f"></div>Escribirle por WhatsApp</button>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <button onClick="{{ toReprog }}" style="height:50px;border-radius:999px;border:1px solid rgba(29,26,33,.12);background:#fff;font-size:15px;color:#1d1a21;cursor:pointer">Reprogramar</button>
+                <button onClick="{{ toCancel }}" style="height:50px;border-radius:999px;border:1px solid rgba(178,54,92,.25);background:#fff;font-size:15px;color:#b2365c;cursor:pointer">Cancelar turno</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ smCancel }}">
+              <div style="font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-top:4px">¿Cancelar el turno de {{ sb.first }}?</div>
+              <div style="font-size:14.5px;line-height:1.45;color:#5f5664;text-wrap:pretty">{{ sb.service }}, {{ sb.dateLow }} a las {{ sb.start }}. Le enviamos un email automático avisándole. El horario queda libre para otras clientas.</div>
+              <button onClick="{{ doCancel }}" style="margin-top:4px;width:100%;height:54px;border:0;border-radius:999px;background:#b2365c;color:#fff;font-size:15.5px;font-weight:500;cursor:pointer">Sí, cancelar turno</button>
+              <button onClick="{{ toDetalle }}" style="width:100%;height:50px;border:0;border-radius:999px;background:transparent;font-size:15px;color:#1d1a21;cursor:pointer">Volver</button>
+            </sc-if>
+            <sc-if value="{{ smReprog }}">
+              <div style="display:flex;flex-direction:column;gap:3px;margin-top:2px"><div style="font-size:20px;font-weight:600;letter-spacing:-0.02em">Reprogramar a {{ sb.first }}</div><div style="font-size:13px;color:#8b8190">{{ sb.service }} · {{ sb.dur }} · ahora {{ sb.dateShort }} {{ sb.start }}</div></div>
+              <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px">
+                <sc-for list="{{ rDays }}" as="d" hint-placeholder-count="7">
+                  <button onClick="{{ d.onClick }}" style="border:0;cursor:pointer;padding:9px 0;border-radius:999px;display:flex;flex-direction:column;align-items:center;gap:2px;background:{{ d.bg }};color:{{ d.color }}"><span style="font-size:11px;color:{{ d.sub }}">{{ d.dow }}</span><span style="font-size:16px;font-weight:500">{{ d.num }}</span></button>
+                </sc-for>
+              </div>
+              <sc-if value="{{ rEmpty }}"><div style="padding:18px;border-radius:18px;background:#fff;text-align:center;font-size:14px;color:#6f6574">{{ rEmptyMsg }}</div></sc-if>
+              <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+                <sc-for list="{{ rSlots }}" as="t" hint-placeholder-count="8">
+                  <button onClick="{{ t.onClick }}" style="height:44px;border-radius:999px;font-size:14.5px;cursor:pointer;background:{{ t.bg }};color:#1d1a21;border:1px solid {{ t.border }};font-weight:{{ t.weight }}">{{ t.label }}</button>
+                </sc-for>
+              </div>
+              <button onClick="{{ doReprog }}" style="margin-top:4px;width:100%;height:54px;border:0;border-radius:999px;background:#1d1a21;color:#fff;font-size:15.5px;font-weight:500;cursor:pointer;opacity:{{ rBtnOpacity }}">Guardar cambio</button>
+              <button onClick="{{ toDetalle }}" style="width:100%;height:44px;border:0;border-radius:999px;background:transparent;font-size:15px;color:#1d1a21;cursor:pointer">Volver</button>
+            </sc-if>
+          </div>
+        </div>
+      </sc-if>
+
+      <div onClick="{{ tapPush }}" style="position:absolute;top:10px;left:10px;right:10px;z-index:60;cursor:pointer;padding:12px 14px;border-radius:24px;background:rgba(252,249,251,.94);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 10px 30px rgba(40,20,40,.18);display:flex;gap:12px;align-items:center;transition:transform .5s cubic-bezier(.2,.9,.25,1.05);transform:{{ pushTransform }}">
+        <div style="width:38px;height:38px;border-radius:10px;flex:none;background:#1d1a21;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;letter-spacing:-0.04em">b</div>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="font-weight:600">Nueva reserva</span><span style="color:#8b8190;font-size:12px">ahora</span></div>
+          <div style="font-size:13px;color:#3d3542;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ pushText }}</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasToast }}">
+      <div style="position:absolute;left:20px;right:20px;bottom:110px;z-index:80;display:flex;justify-content:center;pointer-events:none">
+        <div style="padding:12px 18px;border-radius:18px;background:#1d1a21;color:#fff;font-size:13.5px;line-height:1.4;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25);text-wrap:pretty">{{ toast }}</div>
+      </div>
+    </sc-if>
+
+    <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1d1a21;z-index:90;pointer-events:none"></div>
+  </div>
+  </div>
+  <div style="max-width:420px;text-align:center;font-size:13px;line-height:1.5;color:rgba(255,255,255,.6);text-wrap:pretty">Reservá un turno como clienta y después pasá a Prestadora: llega la notificación y el turno aparece en la agenda.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startSide&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;clienta&quot;,&quot;prestadora&quot;],&quot;default&quot;:&quot;clienta&quot;,&quot;tsType&quot;:&quot;'clienta'|'prestadora'&quot;},&quot;simulateConflict&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;overbooking&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const pad = n => String(n).padStart(2, '0');
+const key = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parse = k => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (k, n) => { const d = parse(k); d.setDate(d.getDate() + n); return key(d); };
+const mondayOf = k => addDays(k, -((parse(k).getDay() + 6) % 7));
+const TODAY = '2026-10-01', NOW = 615;
+const DS = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+const DL = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+const MS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const cap = s => s[0].toUpperCase() + s.slice(1);
+const hm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
+const money = n => '$ ' + n.toLocaleString('es-AR');
+const durL = m => m < 60 ? `${m} min` : (m % 60 ? `${Math.floor(m / 60)} h ${m % 60} min` : `${m / 60} h`);
+const longDate = k => { const d = parse(k); return `${cap(DL[d.getDay()])} ${d.getDate()} de ${MS[d.getMonth()]}`; };
+const shortDate = k => { const d = parse(k); return `${DS[d.getDay()].toLowerCase()} ${d.getDate()}`; };
+const INK = '#1d1a21', MUTED = '#8b8190';
+const GRAD = 'linear-gradient(120deg,#e9d6f4,#f8dbe5,#fbe4d6)';
+const TINT = { Cejas: 'oklch(0.92 0.045 305)', Pestañas: 'oklch(0.92 0.045 50)', Uñas: 'oklch(0.92 0.045 355)', Combos: 'oklch(0.92 0.045 250)' };
+const SERVICES = [
+  { id: 's1', name: 'Perfilado de cejas', cat: 'Cejas', dur: 30, price: 9000, desc: 'Diseño con pinza y cera' },
+  { id: 's2', name: 'Laminado de cejas', cat: 'Cejas', dur: 60, price: 18000, desc: 'Incluye perfilado' },
+  { id: 's3', name: 'Lifting de pestañas', cat: 'Pestañas', dur: 60, price: 20000, desc: 'Con tinte, dura 6 a 8 semanas' },
+  { id: 's4', name: 'Extensiones clásicas', cat: 'Pestañas', dur: 90, price: 32000, desc: 'Pelo a pelo, primera colocación' },
+  { id: 's6', name: 'Esmaltado semipermanente', cat: 'Uñas', dur: 60, price: 15000, desc: 'Manos, con retirado' },
+  { id: 's7', name: 'Kapping gel', cat: 'Uñas', dur: 90, price: 22000, desc: 'Refuerzo sobre uña natural' },
+  { id: 's5', name: 'Combo cejas + pestañas', cat: 'Combos', dur: 120, price: 36000, desc: 'Laminado y lifting' },
+];
+const SV = Object.fromEntries(SERVICES.map(s => [s.id, s]));
+const PEOPLE = [['Camila López', '11 5432 1098'], ['Lucía Fernández', '11 6021 4477'], ['Martina Díaz', '11 3398 2210'], ['Julieta Romero', '11 4870 6612'], ['Valentina Gómez', '11 2290 8743'], ['Agustina Pérez', '11 5567 0921'], ['Florencia Ruiz', '11 6633 1485'], ['Micaela Sosa', '11 4012 7756'], ['Carla Benítez', '11 3176 9054'], ['Rocío Acosta', '11 2845 3302']];
+const hoursOf = k => { const dow = parse(k).getDay(); if (dow === 0) return null; return { open: 540, close: dow === 6 ? 840 : 1140, blocks: dow === 6 ? [] : [{ s: 780, e: 840, label: 'Almuerzo' }] }; };
+const status = (bookings, k, start, dur, opt = {}) => {
+  const h = hoursOf(k); if (!h) return 'closed';
+  if (k < TODAY || (k === TODAY && start <= NOW)) return 'passed';
+  const end = start + dur;
+  if (opt.overbook ? start >= h.close : end > h.close) return 'busy';
+  for (const b of h.blocks) if (start < b.e && end > b.s) return 'busy';
+  for (const b of bookings) if (b.date === k && b.id !== opt.exclude && start < b.start + b.dur && end > b.start) return 'busy';
+  return 'free';
+};
+function seed() {
+  let id = 1, pi = 0; const out = [];
+  const add = (date, start, sid) => { const p = PEOPLE[pi++ % PEOPLE.length]; const s = SV[sid]; out.push({ id: 'b' + id++, date, start, dur: s.dur, serviceId: sid, client: p[0], phone: p[1], email: p[0].split(' ')[0].toLowerCase() + '@gmail.com' }); };
+  const hand = {
+    '2026-09-28': [[600, 's3'], [690, 's1'], [870, 's5'], [1020, 's6']],
+    '2026-09-29': [[570, 's4'], [900, 's2'], [1050, 's1']],
+    '2026-09-30': [[540, 's6'], [630, 's3'], [870, 's7'], [1020, 's2']],
+    '2026-10-01': [[570, 's2'], [660, 's4'], [840, 's1'], [900, 's5'], [1050, 's1']],
+    '2026-10-02': [[540, 's3'], [630, 's1'], [720, 's6'], [900, 's4'], [1020, 's2']],
+    '2026-10-03': [[540, 's5'], [690, 's1'], [720, 's3']],
+    '2026-10-05': [[600, 's7'], [870, 's3']],
+    '2026-10-06': [[540, 's4'], [690, 's2'], [960, 's5']],
+    '2026-10-07': [[630, 's1'], [840, 's6'], [960, 's3']],
+  };
+  for (const k in hand) for (const [t, s] of hand[k]) add(k, t, s);
+  let a = 7; const r = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  for (let i = 7; i <= 30; i++) {
+    const k = addDays(TODAY, i), h = hoursOf(k); if (!h || hand[k]) continue;
+    const p = k === '2026-10-09' ? 1 : 0.3; let t = h.open;
+    while (t < h.close) {
+      if (r() < p) { const s = SERVICES[Math.floor(r() * SERVICES.length)]; if (status(out, k, t, s.dur) === 'free') { add(k, t, s.id); t += s.dur; continue; } }
+      t += 30;
+    }
+  }
+  return out;
+}
+const pill = (on) => ({ bg: on ? INK : 'transparent', color: on ? '#fff' : INK });
+
+class Component extends DCLogic {
+  state = {
+    side: this.props.startSide ?? 'clienta', bookings: seed(),
+    step: 'servicios', cat: 'Todos', serviceId: null, cView: 'semana', cDate: TODAY, cStart: null,
+    form: { name: '', phone: '', email: '' }, errors: {}, submitting: false, conflict: false, last: null,
+    pView: 'dia', pDate: TODAY, pWeek: mondayOf(TODAY), sheetId: null, sheetMode: 'detalle', rDate: TODAY, rStart: null,
+    toast: null, push: null, pushOn: false, hiId: null,
+  };
+  componentWillUnmount() { clearTimeout(this.tt); clearTimeout(this.pt); clearTimeout(this.st); }
+  say(msg) { clearTimeout(this.tt); this.setState({ toast: msg }); this.tt = setTimeout(() => this.setState({ toast: null }), 3000); }
+  setSide(s) {
+    this.setState({ side: s, toast: null });
+    if (s === 'prestadora' && this.state.push) {
+      const b = this.state.push;
+      this.setState({ pView: 'dia', pDate: b.date, pWeek: mondayOf(b.date) });
+      setTimeout(() => this.setState({ pushOn: true }), 350);
+      clearTimeout(this.pt); this.pt = setTimeout(() => this.setState({ pushOn: false, push: null }), 6000);
+    }
+  }
+  slotsFor(k, dur, exclude) {
+    const h = hoursOf(k); if (!h) return [];
+    const out = []; for (let t = h.open; t < h.close; t += 30) out.push({ t, st: status(this.state.bookings, k, t, dur, { overbook: !!this.props.overbooking, exclude }) });
+    return out;
+  }
+  confirm() {
+    const s = this.state; if (s.submitting) return;
+    const f = s.form, e = {};
+    if (f.name.trim().length < 3) e.name = 'Escribí tu nombre y apellido.';
+    if (f.phone.replace(/\D/g, '').length < 8) e.phone = 'Revisá el número: necesitamos al menos 8 dígitos.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = 'Ese email no parece válido.';
+    this.setState({ errors: e }); if (Object.keys(e).length) return;
+    this.setState({ submitting: true });
+    this.st = setTimeout(() => {
+      const st = this.state, sv = SV[st.serviceId];
+      if (this.props.simulateConflict && !this.usedConflict) {
+        this.usedConflict = true;
+        const other = { id: 'x' + Date.now(), date: st.cDate, start: st.cStart, dur: sv.dur, serviceId: sv.id, client: 'Rocío Acosta', phone: '11 2845 3302', email: 'rocio@gmail.com' };
+        this.setState({ submitting: false, conflict: true, bookings: [...st.bookings, other] }); return;
+      }
+      const b = { id: 'n' + Date.now(), date: st.cDate, start: st.cStart, dur: sv.dur, serviceId: sv.id, client: f.name.trim(), phone: f.phone.trim(), email: f.email.trim() };
+      this.setState({ submitting: false, step: 'listo', last: b, push: b, hiId: b.id, bookings: [...st.bookings, b] });
+    }, 1000);
+  }
+  renderVals() {
+    const s = this.state, sv = SV[s.serviceId];
+    const v = {
+      isClienta: s.side === 'clienta', isPrestadora: s.side === 'prestadora',
+      swC: { bg: s.side === 'clienta' ? '#fff' : 'transparent', color: s.side === 'clienta' ? INK : 'rgba(255,255,255,.75)' },
+      swP: { bg: s.side === 'prestadora' ? '#fff' : 'transparent', color: s.side === 'prestadora' ? INK : 'rgba(255,255,255,.75)' },
+      toClienta: () => this.setSide('clienta'), toPrestadora: () => this.setSide('prestadora'),
+      hasPendingPush: !!s.push && s.side === 'clienta',
+      hasToast: !!s.toast, toast: s.toast,
+      stServ: s.step === 'servicios', stHora: s.step === 'horario', stDatos: s.step === 'datos', stListo: s.step === 'listo',
+    };
+    // Paso 1
+    v.cats = ['Todos', 'Cejas', 'Pestañas', 'Uñas', 'Combos'].map(c => ({ label: c, bg: c === s.cat ? INK : 'rgba(255,255,255,.75)', color: c === s.cat ? '#fff' : INK, onClick: () => this.setState({ cat: c }) }));
+    v.services = SERVICES.filter(x => s.cat === 'Todos' || x.cat === s.cat).map(x => {
+      const on = x.id === s.serviceId;
+      return { name: x.name, dur: durL(x.dur), desc: x.desc, price: money(x.price), selected: on, bg: on ? GRAD : 'rgba(255,255,255,.7)', border: on ? '#e3bfd8' : 'rgba(255,255,255,.9)', dotBg: on ? 'rgba(255,255,255,.7)' : 'rgba(29,26,33,.06)', onClick: () => this.setState({ serviceId: x.id, cStart: null }) };
+    });
+    v.servBtnOpacity = sv ? 1 : 0.35;
+    v.goHorario = () => {
+      if (!sv) return this.say('Elegí un servicio para ver los horarios.');
+      let d = s.cDate; for (let i = 0; i < 7; i++) { const k = addDays(TODAY, i); if (this.slotsFor(k, sv.dur).some(x => x.st === 'free')) { d = k; break; } }
+      this.setState({ step: 'horario', cDate: d, cStart: null });
+    };
+    // Paso 2
+    if (sv) {
+      v.svLine = `${sv.name} · ${durL(sv.dur)}`;
+      v.cIsWeek = s.cView === 'semana'; v.cIsMonth = s.cView === 'mes';
+      v.cvW = pill(v.cIsWeek); v.cvM = pill(v.cIsMonth);
+      v.cWeek = () => this.setState({ cView: 'semana', cDate: s.cDate > addDays(TODAY, 6) ? TODAY : s.cDate, cStart: null });
+      v.cMonth = () => this.setState({ cView: 'mes' });
+      const freeCount = k => this.slotsFor(k, sv.dur).filter(x => x.st === 'free').length;
+      v.cWeekDays = [...Array(7)].map((_, i) => {
+        const k = addDays(TODAY, i), d = parse(k), on = k === s.cDate, dis = freeCount(k) === 0;
+        return { dow: DS[d.getDay()], num: d.getDate(), bg: on ? INK : (dis ? 'rgba(255,255,255,.35)' : 'rgba(255,255,255,.75)'), color: on ? '#fff' : (dis ? 'rgba(29,26,33,.3)' : INK), sub: on ? 'rgba(255,255,255,.6)' : (dis ? 'rgba(29,26,33,.3)' : MUTED), onClick: () => this.setState({ cDate: k, cStart: null }) };
+      });
+      const first = new Date(2026, 9, 1), off = (first.getDay() + 6) % 7, cells = [];
+      for (let i = 0; i < off; i++) cells.push({ num: '', vis: 'hidden', bg: 'transparent', color: INK, dot: 'transparent', onClick: () => {} });
+      for (let n = 1; n <= 31; n++) {
+        const k = key(new Date(2026, 9, n)), on = k === s.cDate, past = k < TODAY, fc = past ? 0 : freeCount(k);
+        cells.push({ num: n, vis: 'visible', bg: on ? INK : 'transparent', color: on ? '#fff' : (fc ? INK : 'rgba(29,26,33,.28)'), dot: on ? 'transparent' : (fc ? '#b893cf' : 'transparent'), onClick: () => this.setState({ cDate: k, cStart: null }) });
+      }
+      v.monthCells = cells;
+      const slots = this.slotsFor(s.cDate, sv.dur), h = hoursOf(s.cDate);
+      const nf = slots.filter(x => x.st === 'free').length;
+      v.cDayLabel = `${longDate(s.cDate)} · ${nf} ${nf === 1 ? 'horario libre' : 'horarios libres'}`;
+      v.cNoSlots = !h || nf === 0;
+      v.cNoSlotsMsg = !h ? 'Los domingos Daniela no atiende. Elegí otro día.' : (s.cDate < TODAY ? 'Ese día ya pasó.' : 'No quedan horarios libres para este servicio ese día. Probá con otro.');
+      const mk = x => {
+        const on = x.t === s.cStart && x.st === 'free';
+        const st = on ? { bg: GRAD, color: INK, border: '#e3bfd8', deco: 'none', weight: 600 }
+          : x.st === 'free' ? { bg: 'rgba(255,255,255,.78)', color: INK, border: 'rgba(255,255,255,.95)', deco: 'none', weight: 400 }
+          : x.st === 'busy' ? { bg: 'repeating-linear-gradient(135deg, rgba(29,26,33,.07) 0 1.5px, transparent 1.5px 6px), rgba(255,255,255,.35)', color: 'rgba(29,26,33,.32)', border: 'transparent', deco: 'line-through', weight: 400 }
+          : { bg: 'transparent', color: 'rgba(29,26,33,.26)', border: 'rgba(29,26,33,.08)', deco: 'none', weight: 400 };
+        return { label: hm(x.t), ...st, cursor: x.st === 'free' ? 'pointer' : 'default', onClick: () => x.st === 'free' ? this.setState({ cStart: x.t }) : this.say(x.st === 'busy' ? 'Ese horario no está disponible para este servicio.' : 'Ese horario ya pasó.') };
+      };
+      v.slotGroups = v.cNoSlots ? [] : [['Mañana', slots.filter(x => x.t < 780)], ['Tarde', slots.filter(x => x.t >= 780)]].filter(g => g[1].length).map(([title, l]) => ({ title, slots: l.map(mk) }));
+      v.horaBtnOpacity = s.cStart != null ? 1 : 0.35;
+      // Paso 3/4 resumen
+      const st = s.cStart ?? 0;
+      v.sum = { service: sv.name, dur: durL(sv.dur), price: money(sv.price), date: longDate(s.cDate), time: `${hm(st)} – ${hm(st + sv.dur)}` };
+      v.conflictMsg = `Otra clienta reservó el ${longDate(s.cDate).toLowerCase()} a las ${hm(st)} mientras completabas tus datos. Elegí otro horario: tus datos quedan guardados.`;
+    }
+    v.backToServ = () => this.setState({ step: 'servicios' });
+    v.goDatos = () => s.cStart == null ? this.say('Elegí un horario para continuar.') : this.setState({ step: 'datos' });
+    v.backToHora = () => this.setState({ step: 'horario' });
+    v.form = s.form; v.errors = s.errors;
+    v.errB = { name: s.errors.name ? '#d98aa5' : 'rgba(255,255,255,.95)', phone: s.errors.phone ? '#d98aa5' : 'rgba(255,255,255,.95)', email: s.errors.email ? '#d98aa5' : 'rgba(255,255,255,.95)' };
+    const setF = f => ev => { const val = ev.target.value; this.setState(p => ({ form: { ...p.form, [f]: val }, errors: { ...p.errors, [f]: null } })); };
+    v.onName = setF('name'); v.onPhone = setF('phone'); v.onEmail = setF('email');
+    v.confirm = () => this.confirm();
+    v.confirmLabel = s.submitting ? 'Reservando…' : 'Confirmar turno';
+    v.conflict = s.conflict;
+    v.resolveConflict = () => this.setState({ conflict: false, step: 'horario', cStart: null });
+    if (s.last) {
+      const b = s.last, bs = SV[b.serviceId];
+      v.done = { first: b.client.split(' ')[0], email: b.email, service: bs.name, price: money(bs.price), date: longDate(b.date), time: `${hm(b.start)} – ${hm(b.start + b.dur)}` };
+      v.addCal = () => this.say('Se descargó el evento con el link para gestionar tu turno.');
+      v.waClient = () => this.say(`Abriendo WhatsApp: "¡Hola Daniela! Reservé ${bs.name.toLowerCase()} el ${shortDate(b.date)} a las ${hm(b.start)}."`);
+    }
+    v.restart = () => this.setState({ step: 'servicios', serviceId: null, cStart: null, cat: 'Todos', last: null });
+
+    // Prestadora
+    const pd = parse(s.pDate);
+    v.pIsDay = s.pView === 'dia'; v.pIsWeek = s.pView === 'semana';
+    v.pvD = pill(v.pIsDay); v.pvW = pill(v.pIsWeek);
+    v.pDay = () => this.setState({ pView: 'dia' }); v.pWeekView = () => this.setState({ pView: 'semana' });
+    v.prevWeek = () => this.setState({ pWeek: addDays(s.pWeek, -7), pDate: addDays(s.pDate, -7) });
+    v.nextWeek = () => this.setState({ pWeek: addDays(s.pWeek, 7), pDate: addDays(s.pDate, 7) });
+    v.goToday = () => this.setState({ pDate: TODAY, pWeek: mondayOf(TODAY) });
+    const we = parse(addDays(s.pWeek, 5)), ws = parse(s.pWeek);
+    if (v.pIsDay) { v.pTitle = `${cap(DL[pd.getDay()])} ${pd.getDate()}`; v.pSub = s.pDate === TODAY ? `Hoy · ${MS[pd.getMonth()]} 2026` : `${cap(MS[pd.getMonth()])} 2026`; }
+    else { v.pTitle = 'Semana'; v.pSub = `${ws.getDate()} ${MS[ws.getMonth()].slice(0, 3)} – ${we.getDate()} ${MS[we.getMonth()].slice(0, 3)}`; }
+    const byDay = k => s.bookings.filter(b => b.date === k).sort((a, b) => a.start - b.start);
+    const openSheet = b => () => this.setState({ sheetId: b.id, sheetMode: 'detalle', hiId: null });
+    v.pStrip = [...Array(7)].map((_, i) => {
+      const k = addDays(s.pWeek, i), d = parse(k), on = k === s.pDate, n = byDay(k).length, isT = k === TODAY;
+      return { dow: DS[d.getDay()], num: d.getDate(), count: n ? `${n}` : '', bg: on ? INK : (isT ? 'rgba(255,255,255,.95)' : 'rgba(255,255,255,.6)'), color: on ? '#fff' : INK, sub: on ? 'rgba(255,255,255,.6)' : MUTED, onClick: () => this.setState({ pDate: k }) };
+    });
+    const ph = hoursOf(s.pDate), SH = 46, todays = byDay(s.pDate);
+    v.pClosed = !ph; v.pOpen = !!ph;
+    const tot = todays.reduce((a, b) => a + b.dur, 0);
+    v.daySummary = todays.length ? `${todays.length} ${todays.length === 1 ? 'turno' : 'turnos'} · ${String(tot / 60).replace('.', ',')} h reservadas` : (ph ? 'Sin turnos este día' : 'Cerrado');
+    v.dayHours = ph ? `${hm(ph.open)} – ${hm(ph.close)}` : '';
+    if (ph) {
+      const span = Math.max(ph.close, ...todays.map(b => b.start + b.dur)) - ph.open;
+      v.tlHeight = `${span / 30 * SH}px`;
+      v.hourMarks = []; for (let t = ph.open; t <= ph.open + span; t += 60) v.hourMarks.push({ label: hm(t), top: `${(t - ph.open) / 30 * SH}px` });
+      v.dayBlocks = ph.blocks.map(b => ({ label: b.label, top: `${(b.s - ph.open) / 30 * SH + 2}px`, height: `${(b.e - b.s) / 30 * SH - 4}px` }));
+      v.dayItems = todays.map(b => {
+        const x = SV[b.serviceId];
+        return { top: `${(b.start - ph.open) / 30 * SH + 2}px`, height: `${b.dur / 30 * SH - 4}px`, compact: b.dur <= 30, full: b.dur > 30, tint: TINT[x.cat], ring: s.hiId === b.id ? `0 0 0 2px ${INK}` : 'none', start: hm(b.start), time: `${hm(b.start)} – ${hm(b.start + b.dur)}`, service: x.name, client: b.client, onClick: openSheet(b) };
+      });
+      v.showNow = s.pDate === TODAY && NOW > ph.open && NOW < ph.close;
+      v.nowTop = `${(NOW - ph.open) / 30 * SH}px`;
+    }
+    const WH = 20, wOpen = 540, wClose = 1140;
+    v.wkHeight = `${(wClose - wOpen) / 30 * WH}px`;
+    v.wkMarks = []; for (let t = wOpen; t <= wClose; t += 60) v.wkMarks.push({ label: `${Math.floor(t / 60)}`, top: `${(t - wOpen) / 30 * WH}px` });
+    v.weekHead = []; v.wkItems = []; v.wkBlocks = [];
+    for (let i = 0; i < 6; i++) {
+      const k = addDays(s.pWeek, i), d = parse(k), h = hoursOf(k), on = k === TODAY;
+      v.weekHead.push({ dow: DS[d.getDay()], num: d.getDate(), bg: on ? INK : 'transparent', color: on ? '#fff' : INK, onClick: () => this.setState({ pView: 'dia', pDate: k }) });
+      const left = `calc(${i} * (100% / 6))`, width = 'calc(100% / 6 - 3px)';
+      if (h) {
+        h.blocks.forEach(b => v.wkBlocks.push({ left, width, top: `${(b.s - wOpen) / 30 * WH + 1}px`, height: `${(b.e - b.s) / 30 * WH - 2}px` }));
+        if (h.close < wClose) v.wkBlocks.push({ left, width, top: `${(h.close - wOpen) / 30 * WH + 1}px`, height: `${(wClose - h.close) / 30 * WH - 2}px` });
+      }
+      byDay(k).forEach(b => v.wkItems.push({ left, width, top: `${(b.start - wOpen) / 30 * WH + 1}px`, height: `${Math.min(b.dur, wClose - b.start) / 30 * WH - 2}px`, tint: TINT[SV[b.serviceId].cat], ring: s.hiId === b.id ? `0 0 0 2px ${INK}` : 'none', label: hm(b.start), onClick: openSheet(b) }));
+    }
+    v.catLegend = Object.entries(TINT).map(([label, tint]) => ({ label, tint }));
+    v.tabs = ['Agenda', 'Servicios', 'Horarios', 'Perfil'].map((l, i) => ({ label: l, color: i === 0 ? INK : MUTED, fill: i === 0 ? INK : 'transparent', onClick: () => i && this.say(`"${l}" no forma parte de este prototipo.`) }));
+    // Sheet
+    const sb = s.bookings.find(b => b.id === s.sheetId);
+    v.sheetOpen = !!sb;
+    v.closeSheet = () => this.setState({ sheetId: null });
+    v.smDetalle = s.sheetMode === 'detalle'; v.smCancel = s.sheetMode === 'cancelar'; v.smReprog = s.sheetMode === 'reprogramar';
+    v.toDetalle = () => this.setState({ sheetMode: 'detalle' });
+    if (sb) {
+      const x = SV[sb.serviceId], first = sb.client.split(' ')[0];
+      v.sb = { client: sb.client, first, initials: sb.client.split(' ').map(w => w[0]).join('').slice(0, 2), phone: sb.phone, email: sb.email, service: x.name, dur: durL(x.dur), price: money(x.price), date: longDate(sb.date), dateLow: longDate(sb.date).toLowerCase(), dateShort: shortDate(sb.date), start: hm(sb.start), time: `${hm(sb.start)} – ${hm(sb.start + sb.dur)}`, tint: TINT[x.cat] };
+      v.waPro = () => this.say(`Abriendo WhatsApp con ${first} (${sb.phone})…`);
+      v.toCancel = () => this.setState({ sheetMode: 'cancelar' });
+      v.toReprog = () => this.setState({ sheetMode: 'reprogramar', rDate: sb.date >= TODAY && sb.date <= addDays(TODAY, 6) ? sb.date : TODAY, rStart: null });
+      v.doCancel = () => { this.setState(p => ({ bookings: p.bookings.filter(b => b.id !== sb.id), sheetId: null })); this.say(`Turno cancelado. Le enviamos un email a ${first}.`); };
+      const rk = s.rDate, rs = this.slotsFor(rk, sb.dur, sb.id).filter(t => t.st === 'free');
+      v.rDays = [...Array(7)].map((_, i) => { const k = addDays(TODAY, i), d = parse(k), on = k === rk; return { dow: DS[d.getDay()], num: d.getDate(), bg: on ? INK : '#fff', color: on ? '#fff' : INK, sub: on ? 'rgba(255,255,255,.6)' : MUTED, onClick: () => this.setState({ rDate: k, rStart: null }) }; });
+      v.rEmpty = rs.length === 0; v.rEmptyMsg = hoursOf(rk) ? 'No hay horarios libres ese día.' : 'Los domingos no atendés.';
+      v.rSlots = rs.map(t => { const on = t.t === s.rStart; return { label: hm(t.t), bg: on ? GRAD : '#fff', border: on ? '#e3bfd8' : 'rgba(29,26,33,.08)', weight: on ? 600 : 400, onClick: () => this.setState({ rStart: t.t }) }; });
+      v.rBtnOpacity = s.rStart != null ? 1 : 0.35;
+      v.doReprog = () => {
+        if (s.rStart == null) return this.say('Elegí el nuevo horario.');
+        const nk = s.rDate, nt = s.rStart;
+        this.setState(p => ({ bookings: p.bookings.map(b => b.id === sb.id ? { ...b, date: nk, start: nt } : b), sheetId: null, pDate: nk, pWeek: mondayOf(nk), hiId: sb.id }));
+        this.say(`Turno movido al ${shortDate(nk)} a las ${hm(nt)}. ${first} recibe un email.`);
+      };
+    }
+    // Push
+    const pb = s.push;
+    v.pushTransform = s.pushOn ? 'translateY(0)' : 'translateY(-140%)';
+    v.pushText = pb ? `${pb.client} · ${SV[pb.serviceId].name} · ${shortDate(pb.date)}, ${hm(pb.start)}` : '';
+    v.tapPush = () => { if (!pb) return; clearTimeout(this.pt); this.setState({ pushOn: false, push: null, pView: 'dia', pDate: pb.date, pWeek: mondayOf(pb.date), sheetId: pb.id, sheetMode: 'detalle' }); };
+    return v;
+  }
+}
+</script>
+</body>
+</html>
