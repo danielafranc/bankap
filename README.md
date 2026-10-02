@@ -1,3 +1,44 @@
+# bankap
+
+Turnos para prestadoras de belleza (cejas, pestañas, uñas). Implementación del diseño exportado de Claude Design (`project/Bankap.dc.html`) siguiendo el PRD (`project/uploads/`).
+
+| Carpeta | Qué es | Stack |
+| --- | --- | --- |
+| `apps/web` | Página pública de la clienta: servicio → horario → datos → confirmación | React 19 + Vite + TypeScript |
+| `apps/mobile` | App de la prestadora: agenda por día y semana, detalle, reprogramar, cancelar | Expo SDK 57 + Expo Router |
+| `packages/core` | Reglas de disponibilidad (RN-01 a RN-07), catálogo, agenda de ejemplo, tokens de diseño | TypeScript sin dependencias |
+
+```bash
+npm install
+npm test            # reglas de negocio (node:test)
+npm run typecheck   # core + web + mobile
+npm run web         # http://localhost:5173
+npm run mobile      # Expo: abrir con Expo Go o un simulador
+```
+
+## Demo de la web
+
+La web acepta parámetros en la URL en lugar del panel de Tweaks del prototipo:
+
+- `?ahora=2026-10-01T10:15`: fija fecha y hora (la agenda de ejemplo se arma alrededor de esa semana).
+- `?conflicto`: al confirmar, otra clienta toma el horario primero (RF-15).
+- `?sobreturnos`: el turno solo tiene que empezar dentro del horario (RN-06).
+
+## Estado actual
+
+- **Sin backend todavía.** Cada app usa un `BookingStore` en memoria (`packages/core/src/store.ts`) con la forma que tendría la API: la verificación de "¿sigue libre?" se hace al guardar. El PRD propone ASP.NET Core + PostgreSQL; ahí el constraint de no superposición (RNF-01) pasa a la base.
+- Por eso web y app **no comparten datos**: una reserva en la web no aparece en la app, y la notificación push del prototipo (banner "Nueva reserva") queda pendiente hasta tener backend + `expo-notifications`.
+- "Agregar a mi calendario" descarga un `.ics` real con el link de gestión; "Avisale por WhatsApp" abre `wa.me` con el mensaje prearmado. El teléfono de la prestadora y el token del link son datos de ejemplo.
+- Las pestañas Servicios, Horarios y Perfil de la app muestran un aviso, igual que en el diseño.
+- Las fotos son placeholders rayados.
+- Las horas se calculan en hora de Argentina (UTC-3, RNF-03).
+
+## Bundle de diseño
+
+`chats/` y `project/` son el export original de Claude Design y quedan como referencia.
+
+---
+
 # CODING AGENTS: READ THIS FIRST
 
 This is a **handoff bundle** from Claude Design (claude.ai/design).
