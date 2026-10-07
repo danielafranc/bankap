@@ -1,0 +1,65 @@
+/* bankap — variables de color
+   Importá este archivo una vez (ej. en tu index.css) y usá var(--nombre). */
+:root {
+  /* Texto */
+  --texto-principal: #1d1a21;      /* títulos, cuerpo, botón principal */
+  --texto-secundario: #5f5664;     /* etiquetas de formularios, descripciones */
+  --texto-terciario: #6f6574;      /* textos de apoyo */
+  --texto-suave: #8b8190;          /* subtítulos, horas, notas */
+  --texto-sobre-tinte: #3d3542;    /* texto sobre las tarjetas de categoría */
+  --texto-invertido: #ffffff;      /* texto sobre fondo oscuro */
+
+  /* Marca */
+  --marca: #7b4fa3;                /* links, ícono de check */
+  --marca-hover: #5c3482;
+  --marca-lila: #b893cf;           /* puntos y detalles */
+  --marca-durazno: #e9a98f;
+
+  /* Selección (horario o servicio elegido) */
+  --seleccion-1: #e9d6f4;
+  --seleccion-2: #f8dbe5;
+  --seleccion-3: #fbe4d6;
+  --seleccion-borde: #e3bfd8;
+  --seleccion-degradado: linear-gradient(120deg, var(--seleccion-1), var(--seleccion-2), var(--seleccion-3));
+
+  /* Fondo de la app */
+  --fondo-1: #f1e9f6;
+  --fondo-2: #f8eff2;
+  --fondo-3: #fbefe8;
+  --fondo-brillo-lila: rgba(232, 220, 246, 0.95);
+  --fondo-brillo-durazno: rgba(251, 226, 214, 0.9);
+  --fondo-degradado:
+    radial-gradient(420px 360px at 85% 8%, var(--fondo-brillo-durazno), transparent 70%),
+    radial-gradient(400px 400px at 0% 40%, var(--fondo-brillo-lila), transparent 70%),
+    linear-gradient(170deg, var(--fondo-1) 0%, var(--fondo-2) 50%, var(--fondo-3) 100%);
+
+  /* Superficies (tarjetas, inputs, chips) */
+  --superficie: rgba(255, 255, 255, 0.7);
+  --superficie-fuerte: rgba(255, 255, 255, 0.8);
+  --superficie-suave: rgba(255, 255, 255, 0.45);
+  --superficie-borde: rgba(255, 255, 255, 0.9);
+  --superficie-hoja: #fbf8fb;              /* bottom sheets */
+  --superficie-barra: rgba(252, 248, 250, 0.82); /* barra de pestañas */
+  --superficie-solida: #ffffff;
+
+  /* Líneas y overlays */
+  --linea: rgba(29, 26, 33, 0.07);
+  --linea-fuerte: rgba(29, 26, 33, 0.12);
+  --overlay: rgba(29, 20, 30, 0.32);
+
+  /* Estados */
+  --error: #b2365c;
+  --error-borde: #d98aa5;
+  --exito: #3aa86b;            /* WhatsApp */
+  --exito-claro: #5fd08f;
+  --ahora: #d4577e;            /* línea de hora actual en la agenda */
+  --aviso: #e8789a;            /* punto de notificación */
+  --ocupado: rgba(29, 26, 33, 0.07); /* rayado de horarios ocupados */
+  --deshabilitado: rgba(29, 26, 33, 0.3);
+
+  /* Categorías de servicio (agenda) */
+  --cat-cejas: oklch(0.92 0.045 305);
+  --cat-pestanas: oklch(0.92 0.045 50);
+  --cat-unas: oklch(0.92 0.045 355);
+  --cat-combos: oklch(0.92 0.045 250);
+}
